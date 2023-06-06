@@ -24,7 +24,8 @@ class Account {
 public class BankAccount {
     public static void main(String[] args) {
         Account account = new Account();
-        account.debit(-2000);
+        account.credit(5000);
+        account.debit(2000);
         System.out.println("Account "+ account);
     }
 }
