@@ -13,7 +13,10 @@ class Account {
 
     void credit(int amount)
     {
-        this.balance += amount;
+        if (amount >= 0)
+        {
+            this.balance += amount;
+        }
     }
 
     public String toString()
@@ -23,9 +26,9 @@ class Account {
 }
 public class BankAccount {
     public static void main(String[] args) {
-        Account account = new Account();
-        account.credit(5000);
-        account.debit(2000);
-        System.out.println("Account "+ account);
+        Account account1 = new Account();
+        account1.credit(5000);
+        account1.debit(2000);
+        System.out.println("Account "+ account1);
     }
 }
