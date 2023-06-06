@@ -14,5 +14,18 @@ public class TraverseArray {
             System.out.println("Element "+ element);
         }
         System.out.println("Arr[0] "+ arr[0]);
+
+        int[][] multi = {
+                {10, 20, 30, 40, 50},
+                {60, 70, 80, 90, 100}
+        };
+
+        for (int[] row: multi)
+        {
+            for(int j: row)
+            {
+                System.out.println("J : "+ j);
+            }
+        }
     }
 }
