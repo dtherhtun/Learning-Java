@@ -9,9 +9,10 @@ public class GCDemo {
             arr[i] = new double[100000];
         }
         printMemoryUsage();
+        arr = null;
         System.gc();
 
-        Thread.sleep(10000);
+        Thread.sleep(50000);
         printMemoryUsage();
     }
 
