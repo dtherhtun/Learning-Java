@@ -1,5 +1,12 @@
 package com.turing.javase4thbatch.chapter7;
 
+ /*
+    Only Pass by value in Java
+    parameter passing use case 3 -
+        1. primitive
+        2. change data pointed by parameter
+        3. change reference itself
+ */
 class Something{
     int something;
     Something(int something) {
