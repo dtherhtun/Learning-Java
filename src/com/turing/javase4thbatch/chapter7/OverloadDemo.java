@@ -4,6 +4,12 @@ package com.turing.javase4thbatch.chapter7;
  Do not abuse
 */
 public class OverloadDemo {
+    public OverloadDemo() {
+        System.out.println("No Argument constructor");
+    }
+    public OverloadDemo(int a) {
+        System.out.println("One Argument constructor");
+    }
 
     public static void print() {
         System.out.println("Print with no parameter");
@@ -26,5 +32,8 @@ public class OverloadDemo {
 
         byte b = 127;
         print(b);
+
+        new OverloadDemo();
+        new OverloadDemo(2);
     }
 }
