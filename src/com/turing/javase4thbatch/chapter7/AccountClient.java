@@ -7,5 +7,10 @@ public class AccountClient {
         acc.debit(50);
 
         System.out.println("Account "+ acc);
+
+        Parent parent = new Parent();
+        parent.data = 200;
+
+        parent.parentData = 300;
     }
 }
