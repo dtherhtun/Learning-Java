@@ -36,6 +36,6 @@ public class Box {
 
         box.increase(2);
         vv = box.v();
-        System.out.println("Increase volumen 2x: "+ vv);
+        System.out.println("Increase volume 2x: "+ vv);
     }
 }
