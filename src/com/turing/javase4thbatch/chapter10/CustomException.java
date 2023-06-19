@@ -46,10 +46,10 @@ public class CustomException {
         Stack stack = new Stack();
         try
         {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 11; i++) {
                 stack.push(i);
             }
-            for (int i = 0; i < 11; i++) {
+            for (int i = 0; i < 10; i++) {
                 System.out.println("Pop "+stack.pop());
             }
         }
