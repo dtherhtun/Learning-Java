@@ -7,7 +7,8 @@ public class RuntimeException {
                 throw new java.lang.RuntimeException("One of the operand is NaN");
             }
         }catch (Exception e){
-            return 200;
+            // return 200;
+            throw new java.lang.RuntimeException("Another exception");
         }finally {
             return 300;
         }
