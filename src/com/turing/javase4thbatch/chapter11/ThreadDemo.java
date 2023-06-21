@@ -18,6 +18,7 @@ public class ThreadDemo {
         CountThread th2 = new CountThread("two");
         CountThread th3 = new CountThread("three");
 
+        th1.setPriority(Thread.MAX_PRIORITY);
         th1.start();
         th2.start();
         th3.start();
