@@ -31,11 +31,13 @@ public class MutualExclusionSolved {
         t2.start();
         t3.start();
 
+        System.out.println("is Alive "+ t1.isAlive());
         try {
             t1.join(); // wait until all thread finish
             t2.join(); // wait until all thread finish
             t3.join(); // wait until all thread finish
 
+            System.out.println("is Alive "+ t1.isAlive());
             System.out.println("Counter -> "+ data.counter);
         } catch (InterruptedException ex) {
             Logger.getLogger(MutualExclusionProblem.class.getName());
