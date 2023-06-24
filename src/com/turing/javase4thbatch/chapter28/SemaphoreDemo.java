@@ -23,7 +23,10 @@ class Worker implements Runnable {
             System.out.println(name + " is trying to acquire a permit.");
             semaphore.acquire();
             System.out.println(name + " has acquired a permit.");
-            Thread.sleep(2000); // some work
+            for (int i = 0; i < 5; i++) {
+                System.out.println(name + " is working now");
+            }
+            System.out.println(name + " done");
             System.out.println(name + " is releasing the permit.");
             semaphore.release();
         } catch (InterruptedException e) {
