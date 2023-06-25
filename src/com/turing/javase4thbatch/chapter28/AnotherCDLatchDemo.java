@@ -28,7 +28,7 @@ public class AnotherCDLatchDemo {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int numberOfThreads = 5;
         CountDownLatch latch = new CountDownLatch(numberOfThreads);
 
@@ -41,5 +41,7 @@ public class AnotherCDLatchDemo {
 
         // Main thread waits for all threads to count down
         latch.await();
+
+        System.out.println("All threads have finished their work.");
     }
 }
