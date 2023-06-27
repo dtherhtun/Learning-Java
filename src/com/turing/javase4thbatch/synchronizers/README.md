@@ -27,28 +27,28 @@ sequenceDiagram
         Thread1->>Semaphore: release()
         Semaphore->>Semaphore: Increase permit count (Available permits: 1)
     else Thread1 waits
-        Thread1->>Semaphore: Waiting
+        Thread1->>Semaphore: Blocked, waiting for permit
     end
 
     alt Thread2 enters the critical section
         Thread2->>Semaphore: release()
         Semaphore->>Semaphore: Increase permit count (Available permits: 2)
     else Thread2 waits
-        Thread2->>Semaphore: Waiting
+        Thread2->>Semaphore: Blocked, waiting for permit
     end
 
     alt Thread3 enters the critical section
         Thread3->>Semaphore: release()
-        Semaphore->>Semaphore: Increase permit count (Available permits: 3)
+        Semaphore->>Semaphore: Increase permit count (Available permits: 2)
     else Thread3 waits
-        Thread3->>Semaphore: Waiting
+        Thread3->>Semaphore: Blocked, waiting for permit
     end
 
     alt Thread4 enters the critical section
         Thread4->>Semaphore: release()
-        Semaphore->>Semaphore: Increase permit count (Available permits: 4)
+        Semaphore->>Semaphore: Increase permit count (Available permits: 2)
     else Thread4 waits
-        Thread4->>Semaphore: Waiting
+        Thread4->>Semaphore: Blocked, waiting for permit
     end
 
 ```
