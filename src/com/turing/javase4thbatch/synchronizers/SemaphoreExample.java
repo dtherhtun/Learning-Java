@@ -26,7 +26,7 @@ class SemaphoreTask implements Runnable {
 }
  */
 
-public class SemaphoreExample {
+/*public class SemaphoreExample {
     public static void main(String[] args) {
         Semaphore semaphore = new Semaphore(2); // Number of permits: 2
         // SemaphoreTask task = new SemaphoreTask(semaphore); // use with SemaphoreTask class
@@ -58,5 +58,34 @@ public class SemaphoreExample {
         thread2.start();
         thread3.start();
         thread4.start();
+    }
+}
+
+ */
+
+public class SemaphoreExample {
+    public static void main(String[] args) {
+        Semaphore semaphore = new Semaphore(2); // Initialize Semaphore with 2 permits
+
+        // Worker threads
+        for (int i = 1; i <= 4; i++) {
+            int threadNumber = i;
+            new Thread(() -> {
+                try {
+                    System.out.println("Thread " + threadNumber + ": Attempting to acquire a permit");
+                    semaphore.acquire(); // Acquire a permit from the Semaphore
+                    System.out.println("Thread " + threadNumber + ": Acquired a permit");
+
+                    // Perform critical section operations
+                    System.out.println("Thread " + threadNumber + ": Executing critical section");
+                    Thread.sleep(2000); // Simulating some work
+
+                    System.out.println("Thread " + threadNumber + ": Releasing the permit");
+                    semaphore.release(); // Release the permit
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        }
     }
 }

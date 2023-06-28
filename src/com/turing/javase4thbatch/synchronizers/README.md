@@ -176,33 +176,67 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+    participant MainThread
     participant Thread1
     participant Thread2
     participant Thread3
     participant Thread4
     participant Phaser
 
+    MainThread->>Phaser: register()
     Thread1->>Phaser: register()
     Thread2->>Phaser: register()
     Thread3->>Phaser: register()
     Thread4->>Phaser: register()
 
-    Note over Phaser: Waiting for all threads to register
+    Note over Phaser: Total registered parties: 5
 
+    MainThread->>Phaser: arriveAndAwaitAdvance()
     Thread1->>Phaser: arriveAndAwaitAdvance()
     Thread2->>Phaser: arriveAndAwaitAdvance()
     Thread3->>Phaser: arriveAndAwaitAdvance()
     Thread4->>Phaser: arriveAndAwaitAdvance()
 
-    Note over Phaser: Waiting for all threads to reach barrier
+    Note over MainThread: Starting phase 1
+    Note over Thread1: Starting phase 1
+    Note over Thread2: Starting phase 1
+    Note over Thread3: Starting phase 1
+    Note over Thread4: Starting phase 1
 
-    alt All threads reached barrier
-        Thread1->>Phaser: Resumed
-        Thread2->>Phaser: Resumed
-        Thread3->>Phaser: Resumed
-        Thread4->>Phaser: Resumed
-    else Threads still reaching barrier
-        Thread1->>Phaser: Waiting
-    end
+    Note over Phaser: All threads have arrived
+
+    MainThread->>Phaser: arriveAndAwaitAdvance()
+    Thread1->>Phaser: arriveAndAwaitAdvance()
+    Thread2->>Phaser: arriveAndAwaitAdvance()
+    Thread3->>Phaser: arriveAndAwaitAdvance()
+    Thread4->>Phaser: arriveAndAwaitAdvance()
+
+    Note over MainThread: Starting phase 2
+    Note over Thread3: Starting phase 2
+    Note over Thread2: Starting phase 2
+    Note over Thread1: Starting phase 2
+    Note over Thread4: Starting phase 2
+
+    Note over Phaser: All threads have arrived
+
+    MainThread->>Phaser: arriveAndAwaitAdvance()
+    Thread1->>Phaser: arriveAndAwaitAdvance()
+    Thread2->>Phaser: arriveAndAwaitAdvance()
+    Thread3->>Phaser: arriveAndAwaitAdvance()
+    Thread4->>Phaser: arriveAndAwaitAdvance()
+
+    Note over MainThread: Starting phase 3
+    Note over Thread4: Starting phase 3
+    Note over Thread1: Starting phase 3
+    Note over Thread2: Starting phase 3
+    Note over Thread3: Starting phase 3
+    
+    Thread1->>Phaser: arriveAndDeregister()
+    Thread2->>Phaser: arriveAndDeregister()
+    Thread3->>Phaser: arriveAndDeregister()
+    Thread4->>Phaser: arriveAndDeregister()
+    MainThread->>Phaser: arriveAndDeregister()
+
+    Note over Phaser: All threads completed. Main thread continues.
 
 ```
