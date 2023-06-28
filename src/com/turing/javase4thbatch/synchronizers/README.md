@@ -11,46 +11,49 @@ sequenceDiagram
     participant Thread3
     participant Thread4
     participant Semaphore
+    
+    Note over Semaphore: 2 permits available
 
     Thread1->>Semaphore: acquire()
     Semaphore->>Semaphore: Decrease permit count (Available permits: 1)
+    Note over Semaphore: 1 permits available
     Thread2->>Semaphore: acquire()
     Semaphore->>Semaphore: Decrease permit count (Available permits: 0)
+    Note over Semaphore: 0 permits available
     Thread3->>Semaphore: acquire()
     Semaphore->>Semaphore: Blocked, waiting for permit
     Thread4->>Semaphore: acquire()
     Semaphore->>Semaphore: Blocked, waiting for permit
 
-    Note over Semaphore: 2 permits available
-
     alt Thread1 enters the critical section
+        Note over Thread1: Perform critical section operations
         Thread1->>Semaphore: release()
-        Semaphore->>Semaphore: Increase permit count (Available permits: 1)
-    else Thread1 waits
-        Thread1->>Semaphore: Blocked, waiting for permit
+        Semaphore->>Semaphore: Increase permit count 
     end
+    Note over Semaphore: 1 permits available
 
     alt Thread2 enters the critical section
+        Note over Thread2: Perform critical section operations
         Thread2->>Semaphore: release()
-        Semaphore->>Semaphore: Increase permit count (Available permits: 2)
-    else Thread2 waits
-        Thread2->>Semaphore: Blocked, waiting for permit
+        Semaphore->>Semaphore: Increase permit count 
     end
+    Note over Semaphore: 2 permits available
 
     alt Thread3 enters the critical section
+        Note over Thread3: Perform critical section operations if available permit
         Thread3->>Semaphore: release()
-        Semaphore->>Semaphore: Increase permit count (Available permits: 2)
+        Semaphore->>Semaphore: Increase permit count 
     else Thread3 waits
-        Thread3->>Semaphore: Blocked, waiting for permit
+        Thread3->>Semaphore: Blocked, waiting for permit if no permit available
     end
 
     alt Thread4 enters the critical section
+        Note over Thread3: Perform critical section operations if available permit
         Thread4->>Semaphore: release()
-        Semaphore->>Semaphore: Increase permit count (Available permits: 2)
+        Semaphore->>Semaphore: Increase permit count 
     else Thread4 waits
-        Thread4->>Semaphore: Blocked, waiting for permit
+        Thread4->>Semaphore: Blocked, waiting for permit if no permit available
     end
-
 ```
 ---
 ## CountDownLatch
@@ -60,52 +63,37 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    participant Thread1
-    participant Thread2
-    participant Thread3
-    participant Thread4
+    participant MainThread
+    participant WorkerThread1
+    participant WorkerThread2
+    participant WorkerThread3
+    participant WorkerThread4
     participant CountDownLatch
 
-    Thread1->>CountDownLatch: await()
-    Thread2->>CountDownLatch: await()
-    Thread3->>CountDownLatch: await()
-    Thread4->>CountDownLatch: await()
+    MainThread->>WorkerThread1: Execute task
+    MainThread->>WorkerThread2: Execute task
+    MainThread->>WorkerThread3: Execute task
+    MainThread->>WorkerThread4: Execute task
 
-    Note over CountDownLatch: Waiting for count to reach 0
+    Note over CountDownLatch: Count = 4
 
-    Thread1->>CountDownLatch: countDown()
-    CountDownLatch->>CountDownLatch: Decrease count (Current count: 3)
-    Thread2->>CountDownLatch: countDown()
-    CountDownLatch->>CountDownLatch: Decrease count (Current count: 2)
-    Thread3->>CountDownLatch: countDown()
-    CountDownLatch->>CountDownLatch: Decrease count (Current count: 1)
-    Thread4->>CountDownLatch: countDown()
-    CountDownLatch->>CountDownLatch: Decrease count (Current count: 0)
+    Note over WorkerThread1: Continue execution
+    Note over WorkerThread2: Continue execution
+    Note over WorkerThread3: Continue execution
+    Note over WorkerThread4: Continue execution
 
-    alt Thread1 resumes execution
-        Thread1->>CountDownLatch: Resumed
-    else Thread1 waits
-        Thread1->>CountDownLatch: Waiting
-    end
+    MainThread->>CountDownLatch: Wait until tasks are completed
 
-    alt Thread2 resumes execution
-        Thread2->>CountDownLatch: Resumed
-    else Thread2 waits
-        Thread2->>CountDownLatch: Waiting
-    end
+    WorkerThread1-->>CountDownLatch: Signal task completion
+    WorkerThread2-->>CountDownLatch: Signal task completion
+    WorkerThread3-->>CountDownLatch: Signal task completion
+    WorkerThread4-->>CountDownLatch: Signal task completion
 
-    alt Thread3 resumes execution
-        Thread3->>CountDownLatch: Resumed
-    else Thread3 waits
-        Thread3->>CountDownLatch: Waiting
-    end
+    Note over CountDownLatch: Count = 0
 
-    alt Thread4 resumes execution
-        Thread4->>CountDownLatch: Resumed
-    else Thread4 waits
-        Thread4->>CountDownLatch: Waiting
-    end
+    CountDownLatch-->>MainThread: Resume execution
 
+    Note over MainThread: All tasks completed.
 ```
 ---
 ## CyclicBarrier
@@ -121,26 +109,24 @@ sequenceDiagram
     participant Thread4
     participant CyclicBarrier
 
-    Thread1->>CyclicBarrier: await()
-    Thread2->>CyclicBarrier: await()
-    Thread3->>CyclicBarrier: await()
-    Thread4->>CyclicBarrier: await()
+    Thread1->>CyclicBarrier: Execute part of the task
+    Thread2->>CyclicBarrier: Execute part of the task
+    Thread3->>CyclicBarrier: Execute part of the task
+    Thread4->>CyclicBarrier: Execute part of the task
 
-    Note over CyclicBarrier: Waiting for all threads to arrive
+    Note over CyclicBarrier: Threads waiting at the barrier
 
-    CyclicBarrier->>CyclicBarrier: Increment arrival count (Current count: 1)
-    CyclicBarrier->>CyclicBarrier: Check if all threads arrived
+    CyclicBarrier-->>Thread1: Synchronize at the barrier
+    CyclicBarrier-->>Thread2: Synchronize at the barrier
+    CyclicBarrier-->>Thread3: Synchronize at the barrier
+    CyclicBarrier-->>Thread4: Synchronize at the barrier
 
-    alt All threads arrived
-        CyclicBarrier->>CyclicBarrier: Reset arrival count to 0
-        Thread1->>CyclicBarrier: Resumed
-        Thread2->>CyclicBarrier: Resumed
-        Thread3->>CyclicBarrier: Resumed
-        Thread4->>CyclicBarrier: Resumed
-    else Threads still arriving
-        Thread1->>CyclicBarrier: Waiting
-    end
+    Note over CyclicBarrier: All threads reached the barrier. Continuing execution.
 
+    Note over Thread1: Execute remaining part of the task
+    Note over Thread2: Execute remaining part of the task
+    Note over Thread3: Execute remaining part of the task
+    Note over Thread4: Execute remaining part of the task
 ```
 ---
 ## Exchanger
