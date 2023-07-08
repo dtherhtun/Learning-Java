@@ -46,6 +46,7 @@ public class RecursiveTaskDemo {
         }
         TotalSum sum = new TotalSum(numbers, 0, numbers.length);
         double result = fjp.invoke(sum);
+        // fjp.execute(sum); async
 
         System.out.println("Result "+ result);
     }
