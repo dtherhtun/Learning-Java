@@ -1,5 +1,6 @@
 package com.turing.javase4thbatch.chapter14;
 
+
 public class WithGeneric<T> {
     private static final int SIZE = 10;
     private T[] data;
