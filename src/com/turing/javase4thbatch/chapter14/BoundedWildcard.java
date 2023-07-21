@@ -56,5 +56,7 @@ public class BoundedWildcard {
         };
         Coords<ThreeD> threeDCoords = new Coords<>(threeD);
         Coords.showXYZ(threeDCoords);
+
+        Coords.showXY(threeDCoords);
     }
 }
