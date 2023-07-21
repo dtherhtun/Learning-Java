@@ -14,6 +14,12 @@ class Child<T> extends Parent<T> {
     Child(T obj) {
         super(obj);
     }
+
+    // override here
+    T get() {
+        System.out.println("get override ");
+        return obj;
+    }
 }
 
 class ChildTwo<T, V> extends Parent<T> {
@@ -29,10 +35,13 @@ class ChildTwo<T, V> extends Parent<T> {
 }
 public class GenericSuperDemo {
     public static void main(String[] args) {
-        Child<String> data = new Child<>("Hello");
+        Child<String> data = new Child<>("Hello"); // diamond inference
         System.out.println("Data: " + data.get());
 
         ChildTwo<String,Integer> data2 = new ChildTwo<>("World", 100);
         System.out.println("Str: " + data2.get() + ", Int: " + data2.getValue());
+
+        var child2 = new ChildTwo<Integer, String>(200, "Hello"); // type inference
+        System.out.println(child2.get());
     }
 }
