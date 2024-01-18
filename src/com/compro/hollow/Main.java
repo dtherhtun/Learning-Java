@@ -5,7 +5,7 @@ public class Main {
         int zeroCount = 0;
         int left = 0;
         int right = arr.length - 1;
-        if (arr.length < 3) return 0;
+        if (arr.length < 3 || arr[0] == 0 || arr[arr.length-1] == 0) return 0;
 
         while (left < right) {
             if (arr[left] != 0 && arr[right] != 0) {
@@ -126,6 +126,7 @@ public class Main {
         int[] test4 = {1,2,3,0,0,0,3,4};
         int[] test5 = {1,2,3,0,0,4,3,4};
         int[] test6 = {1,2,3,6,0,0,0,0,0,7,4,3,4};
+        int[] allZero = {0,0,0,0,0,0,0,0};
 
         System.out.println(isHollow(test1));
         System.out.println(isHollow(test2));
@@ -133,6 +134,7 @@ public class Main {
         System.out.println(isHollow(test4));
         System.out.println(isHollow(test5));
         System.out.println(isHollow(test6));
+        System.out.println(isHollow(allZero));
         System.out.println("---------Bard----------");
         System.out.println(isHollowBard(test1));
         System.out.println(isHollowBard(test2));
@@ -140,6 +142,7 @@ public class Main {
         System.out.println(isHollowBard(test4));
         System.out.println(isHollowBard(test5));
         System.out.println(isHollowBard(test6));
+        System.out.println(isHollowBard(allZero));
         System.out.println("----------GPT---------");
         System.out.println(isHollowGPT(test1));
         System.out.println(isHollowGPT(test2));
@@ -147,6 +150,7 @@ public class Main {
         System.out.println(isHollowGPT(test4));
         System.out.println(isHollowGPT(test5));
         System.out.println(isHollowGPT(test6));
+        System.out.println(isHollowGPT(allZero));
         System.out.println("----------God---------");
         System.out.println(middleZero(test1));
         System.out.println(middleZero(test2));
@@ -154,5 +158,6 @@ public class Main {
         System.out.println(middleZero(test4));
         System.out.println(middleZero(test5));
         System.out.println(middleZero(test6));
+        System.out.println(middleZero(allZero));
     }
 }
