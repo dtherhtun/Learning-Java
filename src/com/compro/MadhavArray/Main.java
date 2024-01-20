@@ -12,11 +12,9 @@ public class Main {
                     int sum = 0;
 
                     for (int k = 0; k < j; k++) {
-                        if (index < arr.length) {
-                            sum = sum + arr[index];
-                            System.out.println(index);
-                            index++;
-                        }
+                        sum = sum + arr[index];
+                        System.out.println(index);
+                        index++;
                     }
                     if (arr[0] != sum) {
                         flag = false;
