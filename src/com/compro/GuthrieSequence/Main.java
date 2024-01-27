@@ -17,6 +17,10 @@ public class Main {
             }
         }
 
+        if (GuthrieSeq.isEmpty()) {
+            return 0;
+        }
+
         for (int i = 0; i < arr.length-1; i++) {
             if (arr[i] != GuthrieSeq.get(i)) {
                 return 0;
@@ -52,5 +56,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(isGuthrieSequence(new int[]{7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1}));
         System.out.println(isGuthrieSequenceGod(new int[]{7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1}));
+        System.out.println(isGuthrieSequence(new int[]{1}));
+        System.out.println(isGuthrieSequence(new int[]{2}));
     }
 }
