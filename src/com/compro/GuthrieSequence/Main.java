@@ -29,7 +29,7 @@ public class Main {
             int current = a[i];
             int next = a[i+1];
             if(current % 2 == 0) {
-                //event
+                //even
                 if(next != current/2) {
                     return 0;
                 }
