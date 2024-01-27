@@ -39,7 +39,6 @@ public class Main {
             map.merge(arr[i], 1, Integer::sum);
         }
 
-
         return map.get(map.get(1));
     }
 
