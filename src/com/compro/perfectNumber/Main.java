@@ -24,7 +24,46 @@ public class Main {
         return perfectNum(i)+perfectNum(j);
     }
 
+    public static int henryGod(int i, int j) {
+        if(i < 0 || j <0) {
+            return 0;
+        }
+        int counter = 1;
+        int perfectSequence = 2;
+        int perfectFirstValue = 0;
+        int perfectSecondValue = 0;
+
+        while(true) {
+            //find the first perfect number
+            int sum = 0;
+            for(int k = 1 ; k < perfectSequence; k++) {
+                if(perfectSequence % k == 0) {
+                    sum = sum + k;
+                }
+            }
+            if(sum == perfectSequence) {
+                //yes, this is perfect number
+                if(counter == i) {
+                    perfectFirstValue = perfectSequence;
+                }
+                if (counter == j) {
+                    perfectSecondValue = perfectSequence;
+                }
+
+                counter++;
+
+            }
+
+            if(perfectFirstValue != 0 && perfectSecondValue != 0) {
+                return perfectFirstValue + perfectSecondValue;
+            }
+            perfectSequence++;
+        }
+
+    }
+
     public static void main(String[] args) {
-        System.out.println(henry(1, 3));
+        System.out.println();
+        System.out.println(henryGod(1, 4));
     }
 }
