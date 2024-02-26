@@ -63,35 +63,36 @@ public class LinkedList {
         length++;
     }
 
-    public Node removeFirst() {
-        if (length == 0 ) return null;
-
-        Node temp = head;
-        if (head.next == null) {
-            head = null;
-            tail = null;
-            return temp;
-        }
-        head = head.next;
-        temp.next = null;
-        length--;
-
-        return temp;
-    }
-
 //    public Node removeFirst() {
 //        if (length == 0 ) return null;
 //
 //        Node temp = head;
+//        if (head.next == null) {
+//            head = null;
+//            tail = null;
+//            length--;
+//            return temp;
+//        }
 //        head = head.next;
 //        temp.next = null;
 //        length--;
-//        if (length == 0) {
-//            tail = null;
-//        }
 //
 //        return temp;
 //    }
+
+    public Node removeFirst() {
+        if (length == 0 ) return null;
+
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
+        if (length == 0) {
+            tail = null;
+        }
+
+        return temp;
+    }
 
 
     public void printList() {

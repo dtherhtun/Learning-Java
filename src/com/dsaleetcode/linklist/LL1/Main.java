@@ -24,6 +24,7 @@ public class Main {
         myLinkedList.prepend(9);
         myLinkedList.removeFirst();
         myLinkedList.removeFirst();
+        System.out.println(myLinkedList.removeFirst());
 
         System.out.println("\nLinked List:");
         myLinkedList.printList();
