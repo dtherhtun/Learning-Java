@@ -23,6 +23,10 @@ public class Main {
         myLinkedList.prepend(8);
         myLinkedList.prepend(9);
         System.out.println(myLinkedList.get(1).value);
+        myLinkedList.setCool(1, 2);
+        myLinkedList.setCool(0, 1);
+        System.out.println(myLinkedList.set(4, 0));
+
 
         System.out.println("\nLinked List:");
         myLinkedList.printList();

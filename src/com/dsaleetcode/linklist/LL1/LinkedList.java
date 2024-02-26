@@ -103,6 +103,25 @@ public class LinkedList {
         return temp;
     }
 
+    public boolean set(int index, int value) {
+        if (index >= length || 0 > index) return false;
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        temp.value = value;
+        return true;
+    }
+
+    public boolean setCool(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value;
+            return true;
+        }
+        return false;
+    }
+
 
     public void printList() {
         Node temp = head;
