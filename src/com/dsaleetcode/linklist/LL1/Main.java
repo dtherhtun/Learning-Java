@@ -22,9 +22,7 @@ public class Main {
         myLinkedList.removeLast();
         myLinkedList.prepend(8);
         myLinkedList.prepend(9);
-        myLinkedList.removeFirst();
-        myLinkedList.removeFirst();
-        System.out.println(myLinkedList.removeFirst());
+        System.out.println(myLinkedList.get(1).value);
 
         System.out.println("\nLinked List:");
         myLinkedList.printList();

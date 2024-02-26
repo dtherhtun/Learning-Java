@@ -94,6 +94,15 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        if (index >= length || 0 > index) return null;
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
 
     public void printList() {
         Node temp = head;
