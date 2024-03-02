@@ -25,7 +25,8 @@ public class Main {
         System.out.println(myLinkedList.get(1).value);
         myLinkedList.setCool(1, 2);
         myLinkedList.setCool(0, 1);
-        System.out.println(myLinkedList.set(4, 0));
+        myLinkedList.append(3);
+        System.out.println(myLinkedList.reomve(1));;
 
 
         System.out.println("\nLinked List:");
