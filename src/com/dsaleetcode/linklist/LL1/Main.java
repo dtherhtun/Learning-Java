@@ -26,8 +26,10 @@ public class Main {
         myLinkedList.setCool(1, 2);
         myLinkedList.setCool(0, 1);
         myLinkedList.append(3);
+        myLinkedList.append(4);
         System.out.println(myLinkedList.reomve(1));;
 
+        myLinkedList.reverse();
 
         System.out.println("\nLinked List:");
         myLinkedList.printList();
