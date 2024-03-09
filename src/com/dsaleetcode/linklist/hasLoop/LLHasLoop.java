@@ -76,6 +76,10 @@ public class LLHasLoop {
         length++;
     }
 
+    public void circle() {
+        tail.next = head;
+    }
+
     public boolean HasLoop() {
         Node fast = head;
         Node slow = head;

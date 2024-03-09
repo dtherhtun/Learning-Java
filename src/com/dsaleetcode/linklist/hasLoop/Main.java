@@ -7,6 +7,7 @@ public class Main {
         ll.append(3);
         ll.append(4);
         ll.append(5);
+        ll.circle();
 
         System.out.println(ll.HasLoop());
     }
