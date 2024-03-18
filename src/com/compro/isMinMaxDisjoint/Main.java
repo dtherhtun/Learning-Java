@@ -34,5 +34,6 @@ public class Main {
         System.out.println(isMinMaxDisjoint(new int[]{5, 0, 1, 3, 2}));
         System.out.println(isMinMaxDisjoint(new int[]{5, 4, 1, 3, 2, 1}));
         System.out.println(isMinMaxDisjoint(new int[]{5, 4, 1, 3, 2, 5}));
+        System.out.println(isMinMaxDisjoint(new int[]{0, 4, 83, 3, 2, 5, 7, -1}));
     }
 }
