@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class Main {
     public static int[] clusterCompression(int[ ] a){
         if(a.length == 0) {
-            int[] empty = {};
-            return empty;
+            return new int[]{};
         }
+
         int numClusters = 1;
         int prev = a[0];
         for (int i = 0; i < a.length; i++) {
