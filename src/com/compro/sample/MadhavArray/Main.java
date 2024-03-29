@@ -1,7 +1,5 @@
 package com.compro.sample.MadhavArray;
 
-import javax.sound.midi.Soundbank;
-
 public class Main {
     public static int isMadhavArray(int[ ] a){
         if (a.length < 3) return 0;

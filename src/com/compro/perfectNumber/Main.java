@@ -63,7 +63,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println();
+        System.out.println(henry(1, 4));
         System.out.println(henryGod(1, 4));
     }
 }
