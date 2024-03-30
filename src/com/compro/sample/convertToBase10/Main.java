@@ -4,7 +4,7 @@ public class Main {
     public static int isLegalNumber(int[] a, int base) {
         if (a.length < 1) return 0;
         for (int j : a) {
-            if (j > base) {
+            if (j >= base) {
                 return 0;
             }
         }
