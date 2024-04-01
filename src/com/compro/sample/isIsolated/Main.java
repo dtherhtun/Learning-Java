@@ -7,11 +7,11 @@ public class Main {
         if (n < 0 || n > 2097151) {
             return -1;
         }
-        long square = 0;
-        long cube = 0;
-//        if (n * n * n < Long.MAX_VALUE || n > 0) {
+        long square = n * n;
+        long cube = square * n;
+//        if (n * n * n < Long.MAX_VALUE|| n > 0) { n = 2097155
 //            square = n * n;
-//            cube = square * n;
+//            cube = square * n;  // -9223332454379552741 (n * n * n)
 //        } else {
 //            return -1;
 //        }
@@ -34,14 +34,8 @@ public class Main {
         if (n < 0 || n > 2097151) {
             return -1;
         }
-        long square = 0;
-        long cube = 0;
-//        if (n * n * n < Long.MAX_VALUE|| n > 0) { n = 2097155
-//            square = n * n;
-//            cube = square * n;  // -9223332454379552741 (n * n * n)
-//        } else {
-//            return -1;
-//        }
+        long square = n * n;
+        long cube = square * n;
         while (square != 0) {
             while (cube != 0) {
                 if (square%10 == cube%10){
