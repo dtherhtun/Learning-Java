@@ -48,9 +48,33 @@ public class Main {
         return 1;
     }
 
+    public static int isIsolatedPure(long n) {
+        Instant startTime = Instant.now();
+        if (n < 0 || n > 2097151) {
+            return -1;
+        }
+        long square = n *n;
+        long cube = square * n;
+        while (square != 0) {
+            while (cube != 0) {
+                if (square%10 == cube%10){
+                    return 0;
+                }
+                cube = cube / 10;
+            }
+            square = square /10;
+        }
+
+        Instant stopTime = Instant.now();
+        System.out.println(Duration.between(startTime, stopTime).toNanos());
+        return 1;
+    }
+
     public static void main(String[] args) {
         System.out.println(isIsolated(163));
         System.out.println("-----------------");
         System.out.println(isIsolatedGod(163));
+        System.out.println("-----------------");
+        System.out.println(isIsolatedPure(163));
     }
 }
