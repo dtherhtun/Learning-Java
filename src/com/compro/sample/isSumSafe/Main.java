@@ -2,6 +2,7 @@ package com.compro.sample.isSumSafe;
 
 public class Main {
     public static int isSumSafe(int[] a) {
+        if (a.length < 2) return 0;
         int sum = 0;
         for (int i = 0; i < a.length; i++) {
             sum += a[i];
