@@ -50,13 +50,33 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(isSequentiallyBounded(new int[]{2, 3, 3, 99, 99, 99, 99, 99}));
-        System.out.println(isSequentiallyBounded(new int[]{1, 2, 3}));
-        System.out.println(isSequentiallyBounded(new int[]{2, 3, 3, 3, 3}));
-        System.out.println(isSequentiallyBounded(new int[]{12, 12, 9}));
-        System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3 , 99, 99, 99, 99, 99}));
+//        System.out.println(isSequentiallyBounded(new int[]{2, 3, 3, 99, 99, 99, 99, 99}));
+//        System.out.println(isSequentiallyBounded(new int[]{1, 2, 3}));
+//        System.out.println(isSequentiallyBounded(new int[]{2, 3, 3, 3, 3}));
+//        System.out.println(isSequentiallyBounded(new int[]{12, 12, 9}));
+//        System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3 , 99, 99, 99, 99, 99}));
+//        System.out.println(isSequentiallyBoundedGod(new int[]{1, 2, 3}));
+//        System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3, 3, 3}));
+//        System.out.println(isSequentiallyBoundedGod(new int[]{12, 12, 9}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{0, 1}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{-1, 2}));
+//        System.out.println(isSequentiallyBoundedGod(new int[]{}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{5, 5, 5, 5}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{5, 5, 5, 2, 5}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3, 99, 99, 99, 99, 99}));
         System.out.println(isSequentiallyBoundedGod(new int[]{1, 2, 3}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3}));
         System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3, 3, 3}));
-        System.out.println(isSequentiallyBoundedGod(new int[]{12, 12, 9}));
+        System.out.println(isSequentiallyBoundedGod(new int[]{2, 3, 3, 3, 3, 1}));
     }
 }
+//0
+//        0
+//        1
+//        1
+//        0
+//        1
+//        0
+//        1
+//        0
+//        0
