@@ -2,8 +2,7 @@ package com.compro.sample.railroadTie;
 
 public class Main {
     public static int isRailroadTie(int[] a) {
-        if ((a.length < 2 || a[0] == 0 || a[a.length-1] == 0) ||
-                ((a.length - 5) % 3 != 0 && a.length != 2)) return 0;
+        if (a.length == 0 || a[0] == 0 || a[a.length-1] == 0 || (a.length - 5) % 3 != 0 ) return 0;
 
         for (int i = 2; i < a.length; i = i+3) {
            if (a[i-1] == 0 || a[i-2] == 0 || a[i+1] == 0 || a[i+2] == 0 || a[i] != 0) {
