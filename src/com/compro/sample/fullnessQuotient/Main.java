@@ -4,7 +4,7 @@ public class Main {
     public static int fullnessQuotient(int n) {
         if (n < 1) return -1;
         int count = 0;
-        for (int i = 2; i <= 9 ; i++) {
+        for (int i = 2; i <= 9; i++) {
             if (isContainZeroInBase(n, i) != 0) {
                 count++;
             }

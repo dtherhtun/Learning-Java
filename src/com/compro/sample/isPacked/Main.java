@@ -1,8 +1,5 @@
 package com.compro.sample.isPacked;
 
-import java.util.Arrays;
-import java.util.HashMap;
-
 public class Main {
 //    public static int isPacked(int[] a) {
 //        if (a == null) return 0;
@@ -52,25 +49,25 @@ public class Main {
 //        return 1;
 //    }
 
-    public static int isPacked(int[] a){
+    public static int isPacked(int[] a) {
         int j = 0;
         for (int i = 0; i < a.length; i = j) {
             int count = 0;
-            System.out.println("begin -> i + j "+ i + " "+ j);
+            System.out.println("begin -> i + j " + i + " " + j);
 
             for (j = i; j < i + a[i]; j++) {
-                System.out.println("a[i] -> "+a[i]+" i "+i +" a[j] "+a[j]+" j "+j);
-                if (a[i] != a[j]){
+                System.out.println("a[i] -> " + a[i] + " i " + i + " a[j] " + a[j] + " j " + j);
+                if (a[i] != a[j]) {
                     return 0;
                 }
             }
             for (int k = 0; k < a.length; k++) {
-                System.out.println("a[i] -> "+a[i]+" i "+i +" a[k] "+a[k]+" k "+k+" count "+count);
+                System.out.println("a[i] -> " + a[i] + " i " + i + " a[k] " + a[k] + " k " + k + " count " + count);
                 if (a[k] == a[i]) {
                     count++;
                 }
             }
-            System.out.println("a[i] "+ a[i] + " i "+ i + " j "+ j);
+            System.out.println("a[i] " + a[i] + " i " + i + " j " + j);
             if (count > a[i]) {
                 return 0;
             }

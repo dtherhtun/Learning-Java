@@ -1,11 +1,9 @@
 package com.compro.sample.clusterCompression;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
-//    public static int[] clusterCompression(int[] a){
+    //    public static int[] clusterCompression(int[] a){
 //        if (a.length < 1) return a;
 //        int j = 1;
 //        int numClusters = 0;
@@ -34,7 +32,7 @@ public class Main {
 //        }
 //        return result;
 //    }
-    public static int[] clusterCompression(int[] a){
+    public static int[] clusterCompression(int[] a) {
         if (a.length < 1) return a;
 
         int numClusters = 1;
@@ -49,7 +47,7 @@ public class Main {
         int j = 0;
         prev = a[0];
         for (int i = 0; i < a.length; i++) {
-            if (prev != a[i]){
+            if (prev != a[i]) {
                 j++;
                 result[j] = a[i];
                 prev = a[i];

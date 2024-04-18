@@ -15,21 +15,22 @@ public class Main {
 //        } else {
 //            return -1;
 //        }
-        System.out.println(square + " "+ cube);
+        System.out.println(square + " " + cube);
         HashSet<Long> cubeSet = new HashSet<>();
         while (cube != 0) {
-            cubeSet.add(cube%10);
+            cubeSet.add(cube % 10);
             cube = cube / 10;
         }
         while (square != 0) {
-            if (cubeSet.contains(square%10)) {
+            if (cubeSet.contains(square % 10)) {
                 return 0;
             }
-            square = square /10;
+            square = square / 10;
         }
 
         return 1;
     }
+
     public static int isIsolatedPure(long n) {
         if (n < 0 || n > 2097151) {
             return -1;
@@ -38,12 +39,12 @@ public class Main {
         long cube = square * n;
         while (square != 0) {
             while (cube != 0) {
-                if (square%10 == cube%10){
+                if (square % 10 == cube % 10) {
                     return 0;
                 }
                 cube = cube / 10;
             }
-            square = square /10;
+            square = square / 10;
         }
         return 1;
     }

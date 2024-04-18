@@ -11,17 +11,18 @@ public class Main {
         }
         return result;
     }
+
     public static int[] solve10() {
         int[] result = new int[2];
         for (int i = 0; i <= 10; i++) {
             for (int j = 0; j <= 10; j++) {
-                if (factorial(i) + factorial(j) == factorial(10)){
+                if (factorial(i) + factorial(j) == factorial(10)) {
                     result[0] = i;
                     result[1] = j;
                 }
             }
         }
-        return  result;
+        return result;
     }
 
     public static void main(String[] args) {

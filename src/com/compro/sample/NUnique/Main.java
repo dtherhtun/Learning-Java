@@ -4,7 +4,7 @@ public class Main {
     public static int isNUnique(int[] a, int n) {
         if (a.length < 2) return 0;
         int count = 0;
-        for (int i = 0; i < a.length ; i++) {
+        for (int i = 0; i < a.length; i++) {
             for (int j = i; j < a.length; j++) {
                 if (i != j) {
                     if (a[i] + a[j] == n) {

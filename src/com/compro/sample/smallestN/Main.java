@@ -8,19 +8,20 @@ public class Main {
         int i = 1;
         while (true) {
             int count = 0;
-            for (int j = 1; j <= n ; j++) {
-                if (is2Contain(i * j)){
+            for (int j = 1; j <= n; j++) {
+                if (is2Contain(i * j)) {
                     count++;
                 } else {
                     break;
                 }
             }
-            if ( count == n) {
+            if (count == n) {
                 return i;
             }
             i++;
         }
     }
+
     public static boolean is2Contain(int n) {
         while (n != 0) {
             if (n % 10 == 2) {

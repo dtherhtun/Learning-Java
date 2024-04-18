@@ -21,10 +21,10 @@ public class Main {
     }
 
     public static int convertToBase10(int[] a, int base) {
-        if ( isLegalNumber(a, base) != 1) return 0;
+        if (isLegalNumber(a, base) != 1) return 0;
         int j = 0;
         int sum = 0;
-        for (int i = a.length-1; i >= 0; i--, j++) {
+        for (int i = a.length - 1; i >= 0; i--, j++) {
             sum += a[i] * pow(base, j);
         }
         return sum;

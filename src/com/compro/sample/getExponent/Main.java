@@ -1,7 +1,7 @@
 package com.compro.sample.getExponent;
 
 public class Main {
-//    public static int getExponent(int n, int p) {
+    //    public static int getExponent(int n, int p) {
 //        if (p <= 1) return -1;
 //        int result = 1;
 //        int count = 0;
@@ -33,7 +33,7 @@ public class Main {
         n = n > 0 ? n : -n;
 
         for (int i = n; i > 0; i /= p) {
-            if (i%p == 0){
+            if (i % p == 0) {
                 count++;
             } else {
                 break;

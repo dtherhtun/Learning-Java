@@ -1,14 +1,14 @@
 package com.compro.sample.Inertial;
 
 public class Main {
-    public static int isInertial(int[ ] a) {
+    public static int isInertial(int[] a) {
         if (a.length < 2) return 0;
         int max = Integer.MIN_VALUE;
         int oddMin = Integer.MAX_VALUE;
         int oddCount = 0;
         for (int i = 0; i < a.length; i++) {
             if (a[i] % 2 == 0) {
-                if ( max < a[i]) {
+                if (max < a[i]) {
                     max = a[i];
                 }
             } else {

@@ -1,7 +1,7 @@
 package com.compro.sample.isMinMaxDisjoint;
 
 public class Main {
-    public static int isMinMaxDisjoint(int[] a){
+    public static int isMinMaxDisjoint(int[] a) {
         if (a.length < 3) return 0;
         int maxIndex = 0;
         int minIndex = 0;
@@ -18,13 +18,13 @@ public class Main {
                 minIndex = i;
             }
         }
-        for (int i = 0; i < a.length ; i++) {
+        for (int i = 0; i < a.length; i++) {
             if (min == a[i] || max == a[i]) {
                 sametime++;
             }
         }
 
-        if ( min == max || minIndex - 1 == maxIndex || minIndex + 1 == maxIndex || sametime > 2 ) {
+        if (min == max || minIndex - 1 == maxIndex || minIndex + 1 == maxIndex || sametime > 2) {
             return 0;
         }
         return 1;

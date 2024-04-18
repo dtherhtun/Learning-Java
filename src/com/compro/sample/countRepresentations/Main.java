@@ -6,13 +6,13 @@ public class Main {
         int count = 0;
         int time = 0;
 
-        for (int rupee20 = 0; rupee20 <= numRupees; rupee20+=20) {
-            for (int rupee10 = 0; rupee10 <= numRupees; rupee10+=10) {
-                for (int rupee5 = 0; rupee5 <= numRupees; rupee5+=5) {
-                    for (int rupee2 = 0; rupee2 <= numRupees; rupee2+=2) {
+        for (int rupee20 = 0; rupee20 <= numRupees; rupee20 += 20) {
+            for (int rupee10 = 0; rupee10 <= numRupees; rupee10 += 10) {
+                for (int rupee5 = 0; rupee5 <= numRupees; rupee5 += 5) {
+                    for (int rupee2 = 0; rupee2 <= numRupees; rupee2 += 2) {
                         for (int rupee1 = 0; rupee1 <= numRupees; rupee1++) {
                             time++;
-                            if (rupee1+ rupee2 + rupee5 + rupee10 + rupee20 == numRupees){
+                            if (rupee1 + rupee2 + rupee5 + rupee10 + rupee20 == numRupees) {
                                 count++;
                             }
                         }

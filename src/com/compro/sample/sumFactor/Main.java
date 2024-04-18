@@ -1,14 +1,14 @@
 package com.compro.sample.sumFactor;
 
 public class Main {
-    public static int sumFactor(int[] a){
+    public static int sumFactor(int[] a) {
         int sum = 0;
         int sumFactor = 0;
         for (int i = 0; i < a.length; i++) {
             sum = sum + a[i];
         }
         for (int i = 0; i < a.length; i++) {
-            if (a[i] == sum){
+            if (a[i] == sum) {
                 sumFactor++;
             }
         }

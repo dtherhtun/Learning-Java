@@ -2,12 +2,14 @@ package com.compro.sample.isCentered15;
 
 public class Main {
     public static int isCentered15(int[] a) {
-        if (a.length < 3) { return 0; }
+        if (a.length < 3) {
+            return 0;
+        }
         if (a.length % 2 == 0) {
-            if (a[(a.length/2)-1] + a[a.length/2] == 15) {
+            if (a[(a.length / 2) - 1] + a[a.length / 2] == 15) {
                 return 1;
             }
-        }else {
+        } else {
             if (a[a.length / 2] == 15 || a[(a.length / 2) - 1] + a[a.length / 2] + a[(a.length / 2) + 1] == 15) {
                 return 1;
             }
@@ -16,24 +18,24 @@ public class Main {
     }
 
     public static int isCentered15Unlimited(int[] a) {
-        if (a.length < 3) return  0;
-        int temp = a.length/2;
-        int sum = a[a.length/2];
-        int evenSum = sum + a[a.length/2-1];
+        if (a.length < 3) return 0;
+        int temp = a.length / 2;
+        int sum = a[a.length / 2];
+        int evenSum = sum + a[a.length / 2 - 1];
         int j = 0;
         while (temp > 1) {
-            if (a.length%2 == 0) {
-                if ((a.length/2-j-2) == 0) {
+            if (a.length % 2 == 0) {
+                if ((a.length / 2 - j - 2) == 0) {
                     break;
                 }
-                if ( evenSum != 15) {
-                    evenSum += a[a.length-temp+1]+ a[(a.length/2)-j-2];
+                if (evenSum != 15) {
+                    evenSum += a[a.length - temp + 1] + a[(a.length / 2) - j - 2];
                 } else {
                     break;
                 }
             } else {
                 if (sum != 15) {
-                    sum += a[(a.length/2)-j-1] + a[a.length-temp];
+                    sum += a[(a.length / 2) - j - 1] + a[a.length - temp];
                 } else {
                     break;
                 }

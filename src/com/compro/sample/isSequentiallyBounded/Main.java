@@ -1,19 +1,19 @@
 package com.compro.sample.isSequentiallyBounded;
 
 public class Main {
-    public static int isSequentiallyBounded(int[] a){
+    public static int isSequentiallyBounded(int[] a) {
         if (a.length == 1 && a[0] < 2) {
             return 0;
         }
         int count = 1;
-        for (int i = 1; i < a.length ; i++) {
-            if (a[i-1] > a[i] || a[i-1] <= 1) {
+        for (int i = 1; i < a.length; i++) {
+            if (a[i - 1] > a[i] || a[i - 1] <= 1) {
                 return 0;
             }
 
-            if (a[i-1] == a[i]) {
+            if (a[i - 1] == a[i]) {
                 count++;
-                if (count >= a[i-1] && count >= a[i]) {
+                if (count >= a[i - 1] && count >= a[i]) {
                     return 0;
                 }
             } else {

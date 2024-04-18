@@ -1,12 +1,9 @@
 package com.compro.sample.vanilla;
 
-import java.time.Duration;
-import java.time.Instant;
-
 public class Main {
-    public static int isVanilla(int[] a){
+    public static int isVanilla(int[] a) {
         if (a.length < 2) return 1;
-        int temp = a[0]%10;
+        int temp = a[0] % 10;
         for (int i = 0; i < a.length; i++) {
             int value = 0;
             if (a[i] < 0) {
@@ -16,7 +13,7 @@ public class Main {
             }
 
             while (value != 0) {
-                if (value%10 != temp) {
+                if (value % 10 != temp) {
                     return 0;
                 }
                 value = value / 10;

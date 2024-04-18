@@ -1,12 +1,12 @@
 package com.compro.sample.isOddHeavy;
 
 public class Main {
-    public static int isOddHeavy(int[] a){
+    public static int isOddHeavy(int[] a) {
         if (a.length < 1) return 0;
         int minOdd = Integer.MAX_VALUE;
         int maxEven = Integer.MIN_VALUE;
         for (int i = 0; i < a.length; i++) {
-            if (a[i]%2 == 0) {
+            if (a[i] % 2 == 0) {
                 if (maxEven < a[i]) {
                     maxEven = a[i];
                 }

@@ -1,7 +1,7 @@
 package com.compro.sample.stantonMeasure;
 
 public class Main {
-    public static int stantonMeasure(int[ ] a){
+    public static int stantonMeasure(int[] a) {
         int oneOccurs = 0;
         int nextOccurs = 0;
         for (int i = 0; i < a.length; i++) {
