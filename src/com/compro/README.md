@@ -150,3 +150,45 @@ static int[] primeFactor(int n) {
     }
 }
 ```
+
+### N Integer Rounding
+
+the largest multiple of n(base) less than or equal to number = (number/base) * base
+
+```java
+    static void IntegerBasedRounding(int[] a, int n) {
+    if (a.length < 1 || n <= 0) return;
+
+    float mid = ((float) n / 2);
+
+    for (int i = 0; i < a.length; i++) {
+        if (a[i] > n) {
+            int j = n * (a[i] / n); // Find the largest multiple of n less than or equal to a[i]
+            int remainder = a[i] % n; // Calculate the remainder
+            if (remainder >= mid) {
+                a[i] = j + n; // If the remainder is greater than or equal to mid, round up to the next multiple of n
+            } else {
+                a[i] = j; // Otherwise, round down to the current multiple of n
+            }
+        } else if (a[i] >= mid) {
+            a[i] = n; // If a[i] is greater than or equal to mid and less than n, set it to n
+        } else if (a[i] > 0) {
+            a[i] = 0; // If a[i] is less than mid, set it to 0
+        }
+    }
+}
+```
+
+```java
+    static void IntegerBasedRounding(int[] a, int n) {
+    if (a.length < 1 || n <= 0) return;
+
+    int mid = n / 2;
+
+    for (int i = 0; i < a.length; i++) {
+        if (a[i] >= 0) {
+            a[i] = ((a[i] + mid) / n) * n;
+        }
+    }
+}
+```

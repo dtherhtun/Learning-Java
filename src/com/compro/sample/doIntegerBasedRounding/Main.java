@@ -59,12 +59,15 @@ public class Main {
                 {-1, -2, -3, -4, -5},
                 {-18, 1, 2, 3, 4, 5},
                 {1, 2, 3, 4, 5},
-                {1, 2, 3, 4, 5}};
+                {1, 2, 3, 4, 5},
+                {261, 10, 50, 342, 355, 650, 849},
+                {261, 10, 50, 342, 355, 650, 849}};
 
-        int[] n = new int[]{2, 3, -3, 3, 4, 5, 100};
+        int[] n = new int[]{2, 3, -3, 3, 4, 5, 100, 10, 100};
         for (int i = 0; i < n.length; i++) {
             doIntegerBasedRounding(test[i], n[i]);
             System.out.println(Arrays.toString(test[i]));
         }
+        System.out.println(10 * (42 / 10));
     }
 }
