@@ -135,19 +135,18 @@ x = x * -1;
                            17 17
 
 ```java
-        int i = 0;
-int k = n;
-int size = 0;
-        while(i <=n){
-        while(
-
-isPrime(i) &&k %i ==0){
-size++;
-k =k /i;
-                System.out.
-
-println(i +" "+k);
-            }
-i++;
+static int[] primeFactor(int n) {
+    if (n <= 1) return null;
+    int i = 0;
+    int k = n;
+    int size = 0;
+    while (i <= n) {
+        while (isPrime(i) && k % i == 0) {
+            size++;
+            k = k / i;
+            System.out.println(k + " " + i);
         }
+        i++;
+    }
+}
 ```

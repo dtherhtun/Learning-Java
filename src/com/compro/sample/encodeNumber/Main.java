@@ -43,12 +43,12 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(encodeNumber(6936)));
-//        System.out.println(Arrays.toString(encodeNumber(2)));
-//        System.out.println(Arrays.toString(encodeNumber(6)));
-//        System.out.println(Arrays.toString(encodeNumber(14)));
-//        System.out.println(Arrays.toString(encodeNumber(24)));
-//        System.out.println(Arrays.toString(encodeNumber(1200)));
-//        System.out.println(Arrays.toString(encodeNumber(1)));
-//        System.out.println(Arrays.toString(encodeNumber(-18)));
+        System.out.println(Arrays.toString(encodeNumber(2)));
+        System.out.println(Arrays.toString(encodeNumber(6)));
+        System.out.println(Arrays.toString(encodeNumber(14)));
+        System.out.println(Arrays.toString(encodeNumber(24)));
+        System.out.println(Arrays.toString(encodeNumber(1200)));
+        System.out.println(Arrays.toString(encodeNumber(1)));
+        System.out.println(Arrays.toString(encodeNumber(-18)));
     }
 }
