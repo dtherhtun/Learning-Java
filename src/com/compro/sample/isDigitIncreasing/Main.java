@@ -62,9 +62,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-//        System.out.println(isDigitIncreasing(7));
-//        System.out.println(isDigitIncreasing(36));
-//        System.out.println(isDigitIncreasing(984));
+        System.out.println(isDigitIncreasing(7));
+        System.out.println(isDigitIncreasing(36));
+        System.out.println(isDigitIncreasing(984));
         System.out.println(isDigitIncreasing(7404));
     }
 }
