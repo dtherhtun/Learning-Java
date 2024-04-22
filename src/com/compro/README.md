@@ -193,7 +193,7 @@ the largest multiple of n(base) less than or equal to number = (number/base) * b
 }
 ```
 
-### digit Increase
+### digit Increase || Concat digit
 
 ```
 product = 0;
@@ -203,4 +203,8 @@ product = (product * 10) + i;
 ```
 product = 1;
 product *= digit
+```
+
+```
+result = result * 10 + count;
 ```
