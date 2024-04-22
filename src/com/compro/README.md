@@ -192,3 +192,15 @@ the largest multiple of n(base) less than or equal to number = (number/base) * b
     }
 }
 ```
+
+### digit Increase
+
+```
+product = 0;
+product = (product * 10) + i;
+```
+
+```
+product = 1;
+product *= digit
+```
