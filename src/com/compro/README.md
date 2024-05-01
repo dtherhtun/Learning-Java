@@ -24,6 +24,16 @@ x = x * -1;
 }
 ```
 
+```go
+func power(base float64, exp int) float64 {
+  if exp == 0 {
+    return 1  // Base case: anything to the power of 0 is 1
+  } else {
+    return base * power(base, exp-1)  // Recursive call
+  }
+}
+```
+
 ### isPrime
 
 ```java
