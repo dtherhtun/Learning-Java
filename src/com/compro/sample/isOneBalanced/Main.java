@@ -4,16 +4,16 @@ public class Main {
     static int isOneBalanced(int[] a) {
         if (a.length == 0) return 1;
         int count = 0;
-        boolean oneFound = false;
+        boolean one2timesFound = false;
         boolean nonFound = false;
         for (int i = 0; i < a.length; i++) {
             if (a[i] == 1) {
                 count++;
                 if (nonFound) {
-                    oneFound = true;
+                    one2timesFound = true;
                 }
             } else {
-                if (oneFound) {
+                if (one2timesFound) {
                     return 0;
                 }
                 nonFound = true;
