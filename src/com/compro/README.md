@@ -208,3 +208,11 @@ product *= digit
 ```
 result = result * 10 + count;
 ```
+
+### Total Sum from 1 to n
+
+same as total = 1+2+3+4+6+7+etc....
+
+```bash
+total = n(n+1)/2
+```
