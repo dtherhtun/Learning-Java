@@ -226,3 +226,11 @@ same as total = 1+2+3+4+6+7+etc....
 ```bash
 total = n(n+1)/2
 ```
+
+### Different Adjacent
+
+```bash
+if (i < a.length - 1 && a[i] == a[i + 1]) {
+   return 0;
+}
+```
