@@ -5,12 +5,9 @@ public class Main {
         if (n < 0) return 0;
         if (n == 0) return 1;
         int i = 1;
-        while (i < n) {
+        while (i * i <= n) {
             if (i * i == n) {
                 return 1;
-            }
-            if (i > n / 4 && n < 50 || i > n / 6 && n > 50) {
-                break;
             }
             i++;
         }
@@ -27,5 +24,6 @@ public class Main {
         System.out.println(isSquare(0));
         System.out.println(isSquare(82));
         System.out.println(isSquare(145));
+        System.out.println(isSquare(100000));
     }
 }
