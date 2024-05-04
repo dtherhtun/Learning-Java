@@ -35,7 +35,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String filename = "./src/com/projecteuler/problem8/numbers.txt"; // Change this to the path of your file
+        String filename = "./src/com/projecteuler/problem8/numbers.txt";
         int adjacentDigits = 13;
         long greatestProduct = findGreatestProduct(filename, adjacentDigits);
         System.out.println(greatestProduct);
