@@ -28,6 +28,17 @@ public class Main {
         return sum;
     }
 
+//    static int loopSum(int[] a, int n) {
+//        int sum = 0;
+//
+//        for (int i = 0, index = 0; i < a.length && index < n; i++, index++) {
+//            sum += a[i];
+//            if (i == a.length - 1 && index != n - 1)
+//                i = -1;
+//        }
+//        return sum;
+//    }
+
     public static void main(String[] args) {
         System.out.println(loopSum(new int[]{1, 2, 3}, 2));
         System.out.println(loopSum(new int[]{-1, 2, -1}, 7));
