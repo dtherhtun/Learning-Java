@@ -254,3 +254,33 @@ if (i < a.length - 1 && a[i] == a[i + 1]) {
     return count;
 }
 ```
+
+### Unique Value Using Array
+
+```java
+    static int countUnique(int[] a) {
+    if (a.length < n)
+        return 0;
+
+    int[] uniqueArray = new int[n];
+    int count = 0;
+    boolean uniqueFlag;
+
+    for (int elementOfA : a) {
+        uniqueFlag = false;
+        for (int elementOfUnique : uniqueArray) {
+            if (elementOfA == elementOfUnique) {
+                uniqueFlag = true;
+                break;
+            }
+        }
+        if (!uniqueFlag) {
+            if (totalAdded >= n) return 0;
+            uniqueArray[totalAdded] = elementOfA;
+            count++;
+        }
+    }
+
+    return count;
+}
+```
