@@ -234,3 +234,23 @@ if (i < a.length - 1 && a[i] == a[i + 1]) {
    return 0;
 }
 ```
+
+### Unique Value Count without HashSet
+
+```java
+    static int countUnique(int[] a) {
+    int count = 0;
+    for (int i = 0; i < a.length; i++) {
+        int j;
+        for (j = 0; j < i; j++) {
+            if (a[i] == a[j]) {
+                break;
+            }
+        }
+        if (i == j) {
+            count++;
+        }
+    }
+    return count;
+}
+```
