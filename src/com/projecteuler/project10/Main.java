@@ -7,8 +7,10 @@ public class Main {
             primes[i] = true;
         }
         for (int i = 2; i * i < n; i++) {
-            for (int j = i * i; j < n; j += i) {
-                primes[j] = false;
+            if (primes[i]) {
+                for (int j = i * i; j < n; j += i) {
+                    primes[j] = false;
+                }
             }
         }
         return primes;
