@@ -1,4 +1,4 @@
-package com.projecteuler.project10;
+package com.projecteuler.problem10;
 
 public class Main {
     static boolean[] sieveOfEratosthenes(int n) {
