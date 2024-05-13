@@ -13,7 +13,7 @@ public class Main {
     static double eval(double x, int[] a) {
         double result = 0;
         for (int i = 0; i < a.length; i++) {
-            result = result + (power(x, i) * a[i]);
+            result += (power(x, i) * a[i]);
         }
         return result;
     }
