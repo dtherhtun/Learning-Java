@@ -10,7 +10,7 @@ public class Main {
             }
             if (a[i] == a[i + 1]) {
                 count++;
-            } else if (i + 1 == a.length - 1 && a[i - 1] != a[i - 2]) {
+            } else if (i + 1 == a.length - 1 && a[i + 1] != a[i - 1]) {
                 return 0;
             } else {
                 if (count < 1) {
