@@ -4,9 +4,9 @@ public class Main {
     static int largestAdjacentSum(int[] a) {
         if (a.length < 2) return 0;
         int max = Integer.MIN_VALUE;
-        for (int j = 1, i = 0; i < a.length - 1; i++, j++) {
-            if (max < a[i] + a[j]) {
-                max = a[i] + a[j];
+        for (int i = 0; i < a.length - 1; i++) {
+            if (max < a[i] + a[i + 1]) {
+                max = a[i] + a[i + 1];
             }
         }
         return max;
