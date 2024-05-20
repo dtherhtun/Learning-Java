@@ -2,6 +2,7 @@ package com.compro.sample.isDigitSum;
 
 public class Main {
     static int isDigitSum(int n, int m) {
+        if (n < 0 || m < 0) return -1;
         int sum = 0;
         while (n > 0) {
             sum += n % 10;
