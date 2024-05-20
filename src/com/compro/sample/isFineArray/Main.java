@@ -10,6 +10,9 @@ public class Main {
             if (isPrime(a[i]) && prevPrime + 2 == a[i] || prevPrime - 2 == a[i]) {
                 return 1;
             }
+            if (isPrime(a[i]) && prevPrime != a[i]) {
+                prevPrime = a[i];
+            }
         }
         return prevPrime == 0 ? 1 : 0;
     }
@@ -29,5 +32,6 @@ public class Main {
         System.out.println(isFineArray(new int[]{4, 9, 6, 33}));
         System.out.println(isFineArray(new int[]{3, 8, 15}));
         System.out.println(isFineArray(new int[]{4, 7, 6, 9, 5}));
+        System.out.println(isFineArray(new int[]{4, 3, 6, 11, 13}));
     }
 }
