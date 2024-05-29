@@ -3,6 +3,7 @@ package com.compro.sample.isHollow2;
 public class Main {
     static int isHollow(int[] a) {
         if (a.length < 3 || a[a.length / 2] != 0 || a[(a.length / 2) + 1] != 0 || a[(a.length / 2) - 1] != 0) return 0;
+
         for (int i = 0; i < a.length / 2; i++) {
             if (a[i] == 0 && a[i + 1] != 0) {
                 return 0;
