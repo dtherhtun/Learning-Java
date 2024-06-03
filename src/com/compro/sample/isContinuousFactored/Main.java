@@ -32,8 +32,8 @@ public class Main {
         System.out.println(isContinuousFactored(60));
         System.out.println(isContinuousFactored(120));
         System.out.println(isContinuousFactored(90));
-        System.out.println(isContinuousFactored(99));
-        System.out.println(isContinuousFactored(121));
+        System.out.println(isContinuousFactoredNext(99));
+        System.out.println(isContinuousFactoredNext(121));
         System.out.println(isContinuousFactored(2));
         System.out.println(isContinuousFactored(13));
 
