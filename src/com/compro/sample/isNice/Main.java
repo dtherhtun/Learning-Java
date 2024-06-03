@@ -23,6 +23,6 @@ public class Main {
         System.out.println(isNice(new int[]{2, 2, 3, 3, 3}));
         System.out.println(isNice(new int[]{1, 1, 1, 2, 1, 1}));
         System.out.println(isNice(new int[]{0, -1, 1}));
-        System.out.println(isNice(new int[]{3, x, 5, 7}));
+        System.out.println(isNice(new int[]{3, 4, 5, 7}));
     }
 }
