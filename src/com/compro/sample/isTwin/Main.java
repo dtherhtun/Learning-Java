@@ -12,7 +12,7 @@ public class Main {
     }
 
     static int isTwin(int[] a) {
-        if (a.length < 3) return 0;
+        if (a.length < 2) return 0;
         int prevPrime = 0;
 
         for (int i = 0; i < a.length; i++) {
