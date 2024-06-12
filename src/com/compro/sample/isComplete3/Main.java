@@ -24,7 +24,6 @@ public class Main {
     }
 
     static int IsComplete(int[] a) {
-        boolean flag;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < a.length; i++) {
             if (a[i] < 0) {
@@ -36,8 +35,9 @@ public class Main {
         }
 
         for (int i = 2; i < max; i += 2) {
-            flag = false;
+            boolean flag = true;
             for (int element : a) {
+                flag = false;
                 if (element < 0) {
                     return 0;
                 }
@@ -54,7 +54,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(isComplete(new int[]{2, 3, 2, 4, 11, 6, 10, 9, 8}));
-        System.out.println(isComplete(new int[]{6, 3, 3, 2, 2, 2}));
+        System.out.println(IsComplete(new int[]{2, 3, 2, 4, 11, 6, 10, 9, 8}));
+        System.out.println(IsComplete(new int[]{6, 3, 3, 2, 2, 2}));
     }
 }
