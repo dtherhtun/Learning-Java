@@ -4,7 +4,7 @@ public class Main {
     static int isMeera(int[] a) {
         int sum = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] > i) {
+            if (a[i] >= i) {
                 return 0;
             }
             sum += a[i];
