@@ -3,8 +3,8 @@ package com.compro.sample.isVesuvian;
 public class Main {
     static int isVesuvian(int n) {
         int count = 0;
-        for (int i = 1; i <= n / 2; i++) {
-            for (int j = 1; j <= n / 2; j++) {
+        for (int i = 1; i * i < n; i++) {
+            for (int j = 1; j * j < n; j++) {
                 if ((i * i) + (j * j) == n) {
                     count++;
                     break;
@@ -18,6 +18,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         System.out.println(isVesuvian(50));
+        System.out.println(isVesuvian(65));
+        System.out.println(isVesuvian(85));
     }
 }
